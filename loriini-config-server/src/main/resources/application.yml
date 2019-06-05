@@ -6,7 +6,16 @@ spring:
       server:
         git:
           uri:  https://github.com/renga1080/loriini-config-repo
-          #username: renga1080@gmail.com
-          #password: SriRam@2020
           skipSslValidation:  true
-          timeout:  10
+          timeout:  60
+          force-pull: true
+          deleteUntrackedBranches:  true
+          refreshRate:  0
+          searchPaths:
+            - '{application}'
+
+management:
+  endpoints.web.exposure.include:  '*'
+
+logging:
+  level.org.springframework.web:  TRACE
